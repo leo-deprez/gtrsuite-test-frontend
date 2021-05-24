@@ -1,0 +1,53 @@
+<template>
+  <v-navigation-drawer app :value="drawer" @input="toggleDrawer">
+    <div class="d-flex align-center pa-4">
+      <v-img
+        alt="GTR Suite Logo"
+        contain
+        :src="require('@/assets/images/logo-dark.svg')"
+        height="32"
+        position="center left"
+      />
+    </div>
+
+    <v-list nav>
+      <v-list-item exact v-for="item in items" :key="item.title" link :to="item.route">
+        <v-list-item-icon class="mr-4">
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-content>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
+  </v-navigation-drawer>
+</template>
+
+<script>
+export default {
+  props: {
+    drawer: {
+      required: true,
+    },
+  },
+  data: () => ({
+    items: [
+      { title: 'Accueil', icon: 'mdi-home', route: { name: 'Home' } },
+      { title: 'Responsive', icon: 'mdi-responsive', route: { name: 'Responsive' } },
+      { title: 'Tableau', icon: 'mdi-table', route: { name: 'Table' } },
+      { title: 'Requête & Store', icon: 'mdi-database-clock-outline', route: { name: 'Store' } },
+      { title: 'Routing', icon: 'mdi-routes', route: { name: 'Routing' } },
+      { title: 'Google Maps', icon: 'mdi-map', route: { name: 'Gmap' } },
+      { title: 'SEO', icon: 'mdi-clipboard-pulse-outline', route: { name: 'Seo' } },
+      { title: 'Tests', icon: 'mdi-test-tube', route: { name: 'Tests' } },
+    ],
+    right: null,
+  }),
+  methods: {
+    toggleDrawer(bool) {
+      this.$emit('toggleDrawer', bool)
+    },
+  },
+}
+</script>

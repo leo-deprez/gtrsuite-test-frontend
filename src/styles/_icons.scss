@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'GTRIcons';
+  src: url('~@/assets/fonts/GTRIcons/GTRIcons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='gtr-icons'],
+[class*=' gtr-icons'] {
+  @include icons;
+}

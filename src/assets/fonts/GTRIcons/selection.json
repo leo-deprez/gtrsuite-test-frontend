@@ -1,0 +1,58 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M824.889 981.334h-625.779c-86.403 0-156.445-70.042-156.445-156.445v0-625.779c0-86.403 70.042-156.445 156.445-156.445v0h625.779c86.358 0.111 156.333 70.087 156.445 156.433v625.789c-0.111 86.358-70.087 156.333-156.433 156.445h-0.010zM545.44 202.749c-4.652 0-9.309 0-13.846 0.274-198.058 0-336.355 128.675-336.355 312.889 0 181.28 139.82 312.889 332.445 312.889 94.912-0.131 182.973-29.354 255.774-79.226l-1.55 1.003v-250.311h-148.62v168.181c-27.703 11.545-59.831 18.644-93.508 19.546l-0.36 0.008c-89.272-3.516-160.75-74.994-164.257-163.94l-0.010-0.326c-0.12-2.43-0.191-5.278-0.191-8.142 0-45.198 17.364-86.347 45.786-117.131l-0.107 0.118c29.804-32.255 71.73-52.928 118.499-54.746l0.318-0.010c0.406-0.004 0.89-0.006 1.374-0.006 57.341 0 108.677 25.706 143.113 66.226l0.222 0.269 109.511-97.778c-60.43-67.488-147.828-109.761-245.097-109.761-1.105 0-2.208 0.006-3.31 0.016l0.167-0.001z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 24,
+        "tags": ["logo-gtrsuite"],
+        "colorPermutations": {}
+      },
+      "attrs": [],
+      "properties": {
+        "order": 3,
+        "id": 0,
+        "name": "logo-gtrsuite",
+        "prevSize": 24,
+        "code": 59648,
+        "ligatures": "logo_gtrsuite"
+      },
+      "setIdx": 0,
+      "setId": 0,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "metadata": { "name": "GTRIcons" },
+  "preferences": {
+    "showGlyphs": true,
+    "showCodes": false,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "gtr-icons",
+      "metadata": { "fontFamily": "GTRIcons", "majorVersion": 1, "minorVersion": 0 },
+      "metrics": { "emSize": 1024, "baseline": 6.25, "whitespace": 50 },
+      "embed": false,
+      "noie8": true,
+      "ie7": false,
+      "cssVars": false,
+      "cssVarsFormat": "scss",
+      "showSelector": false,
+      "showMetrics": false,
+      "showMetadata": false,
+      "showVersion": false
+    },
+    "imagePref": { "prefix": "icon-", "png": true, "useClassSelector": true, "color": 0, "bgColor": 16777215 },
+    "historySize": 50,
+    "gridSize": 16,
+    "showGrid": true,
+    "showLiga": true
+  }
+}
