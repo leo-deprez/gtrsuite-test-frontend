@@ -1,13 +1,28 @@
 <template>
-  <div>
-    <div class="responsive__description mb-6">
-      Dans cet excercice vous devez afficher les données <code>customers</code> dans un tableau en utilisant le
-      composant
-      <a href="https://vuetifyjs.com/en/components/data-tables/" target="_blank"><code>v-data-table</code></a> de
-      Vuetify. Le but de cet excercice est d'évaluer votre capacité à prioriser une information et l'afficher de façon
-      pertinente. Pour ce faire, vous devez rajouter le code manquant dans le fichier <code>src/views/Table.vue</code>.
+  <div class="table">
+    <div class="table__description mb-6">
+      Dans cet exercice vous devez afficher les données <code>customers</code> dans un tableau en utilisant le composant
+      Vuetify <a href="https://vuetifyjs.com/en/components/data-tables/" target="_blank"><code>v-data-table</code></a
+      >.<br />
+      Le but de cet exercice est d'évaluer votre capacité à prioriser une information et de l'afficher de façon
+      pertinente. <br />
+      Pour ce faire, vous devez rajouter le code manquant dans le fichier <code>src/views/Table.vue</code>. (ex: L'ID du
+      client n'est pas une donnée pertinente à afficher.)<br />
+      <em>
+        Notes :
+        <ul>
+          <li>
+            Les dates sont au format ISO et peuvent être manipulées avec
+            <a href="https://day.js.org/" target="_blank">days.js</a> (déjà présent dans le projet).
+          </li>
+          <li>
+            Les valeurs possible de la propriété <code>job</code> sont
+            <code>developer, designer, sales ou humanResources</code>
+          </li>
+        </ul>
+      </em>
     </div>
-    <v-data-table :items="customers"></v-data-table>
+    <v-data-table class="table__data-table" :headers="headers" :items="customers"> </v-data-table>
   </div>
 </template>
 
@@ -16,6 +31,7 @@ export default {
   name: 'Table',
   data() {
     return {
+      headers: [],
       customers: [
         {
           _id: '60abca8793936f75410e832f',
@@ -1822,3 +1838,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.table {
+  /* Rajouter le SCSS manquant pour styliser le contenu du tableau */
+}
+</style>

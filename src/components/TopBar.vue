@@ -5,14 +5,10 @@
     </v-btn>
 
     <v-toolbar-title>
-      GTRSuite Tests Frontend <span v-if="routeTitle">{{ routeTitle }}</span></v-toolbar-title
-    >
+      GTRSuite Tests Frontend <span v-if="routeTitle">{{ routeTitle }}</span>
+    </v-toolbar-title>
 
     <v-spacer></v-spacer>
-
-    <v-btn icon small fab class="mr-0">
-      <v-icon>mdi-cog-outline</v-icon>
-    </v-btn>
   </v-app-bar>
 </template>
 
