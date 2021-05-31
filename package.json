@@ -40,7 +40,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^2.2.1",
-    "sass": "^1.32.0",
+    "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-concentric-order": "^4.0.1",
