@@ -153,7 +153,151 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .responsive {
-  /* Rajouter le SCSS manquant (au format BEM) */
+  position: relative;
+  margin-bottom: 50px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    background: rgb(220, 220, 220);
+    padding: 15px;
+
+    &__menu-toggle {
+      flex: 0 0 auto;
+
+      @media (min-width: 992px) {
+        display: none;
+      }
+    }
+
+    &__logo {
+      flex: 1 0 auto;
+
+      @media (min-width: 992px) {
+        flex: 0 1 auto;
+        margin-right: 50px;
+      }
+
+      &__img {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    &__navigation {
+      display: none;
+      gap: 20px;
+
+      @media (min-width: 992px) {
+        display: flex;
+      }
+
+      &__item {
+        &__label {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__container {
+
+    &__top {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &__title {
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+
+      &__breadcrumb {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+
+        &__item {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          color: rgb(182, 182, 195);
+          font-size: 14px;
+        }
+      }
+
+      &--align-end {
+        display: flex;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        justify-content: flex-end;
+        z-index: 1;
+        margin-bottom: 50px;
+        padding: 15px;
+
+        @media (min-width: 768px) {
+          position: relative;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    &__elements {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 15px;
+
+      @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (min-width: 992px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      &__item {
+        border: 1px solid rgb(182, 182, 195);
+      }
+    }
+  }
+
+
+  &__navigation-mobile {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-around;
+    border-top: 1px solid rgb(182, 182, 195);
+    background: white;
+    width: 100%;
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5px;
+
+      &__label {
+        font-size: 12px;
+      }
+    }
+  }
 }
 </style>

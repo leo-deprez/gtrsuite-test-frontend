@@ -23,15 +23,28 @@
       map-type-id="roadmap"
       class="gmap__map"
     >
+      <gmap-custom-marker :marker="{ lat: 45.5845569, lng: 5.9005165 }">
+        <img src="src/assets/images/map-marker.svg">
+        <my-component></my-component>
+      </gmap-custom-marker>
+
+      <gmap-custom-marker :marker="markers">
+        <my-component></my-component>
+      </gmap-custom-marker>
     </gmap-map>
   </div>
 </template>
 
 <script>
-// import { sendGetRequest } from '@/services/api.service.js'
+import { sendGetRequest } from '@/services/api.service.js'
+import GmapCustomMarker from 'vue2-gmap-custom-marker';
+
 
 export default {
   name: 'Gmap',
+  components: {
+      'gmap-custom-marker': GmapCustomMarker
+  },
   data() {
     return {
       map: {
@@ -221,6 +234,11 @@ export default {
       popup: false,
     }
   },
+  computed: {
+    markers() {
+      return sendGetRequest('/data/chambery.geojson')
+    }
+  }
 }
 </script>
 

@@ -1,6 +1,8 @@
 // import { sendGetRequest } from '@/services/api.service'
 
-const state = () => {}
+const state = {
+  items: 2,
+}
 
 const mutations = {}
 

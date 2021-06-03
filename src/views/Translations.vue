@@ -13,20 +13,17 @@
     <div class="mb-6">
       <div class="font-weight-bold text-subtitle-1">Exercice n°1 :</div>
       <div class="mb-2">Remplacer la phrase ci-dessous par une traduction i18n.</div>
-      <em
-        >>
-        <!-- Remplacer ce texte via Vue i18n -->Je voudrais que cette phrase s'affiche en Français ou en Anglais.</em
-      >
+      <em>>
+        {{ $t("message.exercice1") }}</em>
     </div>
     <div class="mb-6">
       <div class="font-weight-bold text-subtitle-1">Exercice n°2 :</div>
       <div class="mb-2">
         Remplacer la phrase ci-dessous par une traduction i18n utilisant la variable <code>hours</code>.
       </div>
-      <em>
-        >
-        <!-- Remplacer ce texte via Vue i18n -->Tout le monde sait qu'il y a {{ hours }} heures dans une journée.
-      </em>
+      <em>>
+        {{ $t('message.exercice2', { hours: hours}) }}</em>
+
     </div>
     <div class="font-weight-bold text-subtitle-1">Exercice n°3 :</div>
     <div class="mb-2">
@@ -37,11 +34,8 @@
     </div>
     <v-select outlined :items="results" v-model="nbResults" label="Valeur de nbResults"></v-select>
     <div>
-      <em
-        >>
-        <!-- Remplacer ce texte via Vue i18n -->
-        Il n'y a {{ nbResults }} résultat</em
-      >
+      <em>>
+        {{ $tc('message.exercice3', nbResults, { count: nbResults}) }}</em>
     </div>
   </div>
 </template>

@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      textfield: '',
+      textfield: 'test',
       buttonClicked: 0,
       switchValue: false,
     }

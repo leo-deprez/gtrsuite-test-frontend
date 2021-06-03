@@ -1,1 +1,9 @@
-{}
+{
+    "message":{
+        "exercice1": "Ceci est de l'anglais",
+
+        "exercice2": "There is {hours} hours dans une journée",
+
+        "exercice3": "There is no result| Il y a 1 result | Il y a {count} results"
+    }
+}

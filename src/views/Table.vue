@@ -22,7 +22,29 @@
         </ul>
       </em>
     </div>
-    <v-data-table class="table__data-table" :headers="headers" :items="customers"> </v-data-table>
+    <v-data-table
+      class="table__data-table elevation-1"
+      :headers="headers"
+      :items="customers"
+    >
+      <template v-slot:[`item.name.last`]="{ item }">
+        <div class="table__data-table__user">
+          <v-img class="table__data-table__user__avatar" :src="item.avatar" :alt="item.name.last" height="24px" width="24px" align="right"></v-img>
+          <div class="table__data-table__user__name">{{ item.name.first }} {{ item.name.last.toUpperCase() }}</div>
+        </div>
+      </template>
+
+      <template v-slot:[`item.address`]="{ item }">
+        <span v-for="element in item.address.split(',')" :key="element">{{ element }}<br></span>
+      </template>
+
+      <template v-slot:[`item.isActive`]="{ item }">
+        <div class="table__data-table__active">
+          <div v-if="item.isActive" class="table__data-table__active__dot table__data-table__active__dot--true"></div>
+          <div v-else class="table__data-table__active__dot table__data-table__active__dot--false"></div>
+        </div>
+      </template>
+    </v-data-table>
   </div>
 </template>
 
@@ -31,7 +53,19 @@ export default {
   name: 'Table',
   data() {
     return {
-      headers: [],
+      headers: [
+        {
+          text: 'Utilisateur',
+          align: 'center',
+          sortable: true,
+          value: 'name.last',
+        },
+        { text: 'Entreprise', value: 'company' },
+        { text: 'Adresse', value: 'address' },
+        { text: 'eMail', value: 'email' },
+        { text: 'Téléphone', value: 'phone' },
+        { text: 'En ligne', value: 'isActive', align: 'center' },
+      ],
       customers: [
         {
           _id: '60abca8793936f75410e832f',
@@ -1836,11 +1870,57 @@ export default {
       ],
     }
   },
+  computed: {
+  	splitedList(){
+    	let newArr = [...this.customers]
+      newArr.map(el => {
+      	return el.codes = el.codes.split(', ')
+      })
+      return newArr
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .table {
   /* Rajouter le SCSS manquant pour styliser le contenu du tableau */
+
+  &__data-table {
+
+    &__user {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+
+      &__avatar {
+        flex: 0 1 auto;
+      }
+
+      &__name {
+        flex: 1 1 auto;
+      }
+    }
+
+    &__active {
+      display: flex;
+      justify-content: center;
+
+      &__dot {
+        border-radius: 40px;
+        width: 15px;
+        height: 15px;
+
+        &--true {
+          background: green;
+        }
+
+        &--false {
+          background: red;
+        }
+      }
+    }
+  }
 }
 </style>

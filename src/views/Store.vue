@@ -36,7 +36,16 @@ export default {
   name: 'Store',
   data() {
     return {
-      headers: [],
+      headers: [
+        {
+          text: 'Utilisateur',
+          align: 'center',
+          sortable: true,
+          value: 'name.last',
+        },
+        { text: 'Entreprise', value: 'company' },
+        { text: 'Adresse', value: 'address' },
+      ],
     }
   },
   computed: {
