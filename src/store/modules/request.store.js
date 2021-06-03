@@ -1,12 +1,25 @@
-// import { sendGetRequest } from '@/services/api.service'
+import { sendGetRequest } from '@/services/api.service'
 
-const state = {
-  items: 2,
+const GET_TODOS = 'GET_TODOS'
+
+const state = () => {
+  return {
+    todos: null,
+  }
 }
 
-const mutations = {}
+const mutations = {
+  [GET_TODOS]: (state, todos) => {
+    state.todos = todos
+  },
+}
 
-const actions = {}
+const actions = {
+  getTodos: async ({ commit }) => {
+    const data = await sendGetRequest('https://jsonplaceholder.typicode.com/todos')
+    commit(GET_TODOS, data)
+  },
+}
 
 export default {
   namespaced: true,

@@ -3,7 +3,7 @@
     <div class="routing-exercise3__description">
       Cet exercice est validé si le nombre 42 s'affiche ci-dessous (via la query de l'URL) :
     </div>
-    <strong><!-- Nombre à afficher ici --></strong>
+    <strong><!-- Nombre à afficher ici -->{{ $route.query.id }}</strong>
   </div>
 </template>
 

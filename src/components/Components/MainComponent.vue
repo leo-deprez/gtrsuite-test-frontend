@@ -19,7 +19,8 @@
 
       <v-switch v-model="switchValue" inset hide-details label="Valeur à transmettre au dernier composant"></v-switch>
     </div>
-    <SubComponent />
+    <!-- <SubComponent :value="textfield" @onButtonClick="onClick" /> -->
+    <SubComponent :textfield="textfield" />
   </div>
 </template>
 
@@ -33,10 +34,20 @@ export default {
   },
   data() {
     return {
-      textfield: 'test',
+      textfield: '',
       buttonClicked: 0,
       switchValue: false,
     }
   },
+  // provide() {
+  //   return {
+  //     switchValue: () => this.switchValue,
+  //   }
+  // },
+  // methods: {
+  //   onClick(value) {
+  //     this.buttonClicked = value
+  //   },
+  // },
 }
 </script>

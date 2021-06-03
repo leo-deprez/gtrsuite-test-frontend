@@ -25,6 +25,9 @@
       :loading="items.length ? false : true"
       loading-text="Chargement des données... Veuillez patienter"
     >
+      <template v-slot:[`item.completed`]="{ item }">
+        <v-simple-checkbox v-model="item.completed" disabled></v-simple-checkbox>
+      </template>
     </v-data-table>
   </div>
 </template>
@@ -34,28 +37,33 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'Store',
+  async mounted() {
+    await this.getTodos()
+  },
   data() {
     return {
       headers: [
-        {
-          text: 'Utilisateur',
-          align: 'center',
-          sortable: true,
-          value: 'name.last',
-        },
-        { text: 'Entreprise', value: 'company' },
-        { text: 'Adresse', value: 'address' },
+        { text: 'Tâche', value: 'title' },
+        { text: 'Fait', value: 'completed' },
       ],
     }
   },
   computed: {
-    ...mapState({}),
+    ...mapState({
+      todos: state => state.request.todos,
+    }),
     items() {
+      if (this.todos?.length) {
+        return this.todos
+      }
+
       return []
     },
   },
   methods: {
-    ...mapActions({}),
+    ...mapActions({
+      getTodos: 'request/getTodos',
+    }),
   },
 }
 </script>

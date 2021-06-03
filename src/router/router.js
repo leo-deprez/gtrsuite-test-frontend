@@ -30,6 +30,30 @@ const routes = [
     component: () => import('@/views/Routing.vue'),
     children: [
       /* Rajouter les routes manquantes pour les exercices de 'Routing' ici. */
+      {
+        path: 'ex1/:id',
+        name: 'Exercice 1',
+        component: () => import('@/components/Routing/Excercise1.vue'),
+      },
+      {
+        path: 'ex2/:id',
+        name: 'Exercice 2',
+        component: () => import('@/components/Routing/Excercise2.vue'),
+        props: true,
+      },
+      {
+        path: 'ex3/:id',
+        name: 'Exercice 3',
+        component: () => import('@/components/Routing/Excercise3.vue'),
+      },
+      {
+        path: 'ex4/:id',
+        name: 'Exercice 4',
+        component: () => import('@/components/Routing/Excercise4.vue'),
+        props: {
+          id: 42,
+        },
+      },
     ],
   },
   {

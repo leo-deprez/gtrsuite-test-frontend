@@ -4,7 +4,10 @@
     <div class="mb-12">
       <div>
         La valeur du champ du composant princiaple doit s'afficher ici :
-        <strong>{{ textfield }}<!-- Renseigner la valeur ici --></strong>
+        <strong
+          >{{ textfield
+          }}<!-- Renseigner la valeur ici --></strong
+        >
       </div>
       <v-divider class="my-6" />
       <v-btn>Incrémentation du compteur parent</v-btn>
@@ -18,11 +21,10 @@ import LastComponent from '@/components/Components/LastComponent.vue'
 
 export default {
   name: 'ComponentsSubComponent',
-  //props: ['textfield'],
   props: {
     textfield: {
-      type: String
-    }
+      type: String,
+    },
   },
   data() {
     return {
